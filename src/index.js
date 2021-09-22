@@ -9,6 +9,9 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import Theme from './styles/theme';
 import StyledToast from './components/Toast/StyledToast';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>

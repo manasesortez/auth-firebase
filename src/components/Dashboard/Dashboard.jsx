@@ -5,6 +5,9 @@ import Text from '../Typography/Text';
 import { useAuth } from '../../hooks/useAuth';
 import Slide from "../Slide/slide";
 
+import Links from "../Products/Links";
+
+
 const Dashboard = () => {
   const auth = useAuth();
   return (
@@ -12,6 +15,7 @@ const Dashboard = () => {
         <Slide/>
         <H1>Dashboard</H1>
         <Text>Logged in as {auth.user.email}</Text>
+        <Links />
     </DashboardContainer>
   );
 
