@@ -5,19 +5,17 @@ import Text from '../Typography/Text';
 import { useAuth } from '../../hooks/useAuth';
 import Slide from "../Slide/slide";
 
-import Links from "../Products/Links";
 
 
 const Dashboard = () => {
-  const auth = useAuth();
-  return (
-    <DashboardContainer>
-        <Slide/>
-        <H1>Dashboard</H1>
-        <Text>Logged in as {auth.user.email}</Text>
-        <Links />
-    </DashboardContainer>
-  );
+    const auth = useAuth();
+    return (
+        <DashboardContainer>
+            <Slide/>
+            <H1>Dashboard</H1>
+            <Text>Hi, {auth.user.email} Welcome to Orders</Text>
+        </DashboardContainer>
+    );
 
 };
 

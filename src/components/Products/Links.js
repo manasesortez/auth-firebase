@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LinksForm from "./LinksForm";
-import './Links.css'
+import './LinksStyle'
 
 import { db } from "./db/firebase";
 import { toast } from "react-toastify";
@@ -22,7 +22,7 @@ const Links = () => {
   const onDeleteLink = async (id) => {
     if (window.confirm("are you sure you want to delete this link?")) {
       await db.collection("products").doc(id).delete();
-      toast("Link Removed Successfully", {
+      toast("Product Removed Successfully", {
         type: "error",
         autoClose: 2000
       });
@@ -37,12 +37,12 @@ const Links = () => {
     try {
       if (currentId === "") {
         await db.collection("products").doc().set(linkObject);
-        toast("New Link Added", {
+        toast("New Product Added", {
           type: "success",
         });
       } else {
         await db.collection("products").doc(currentId).update(linkObject);
-        toast("Link Updated Successfully", {
+        toast("Product Updated Successfully", {
           type: "info",
         });
         setCurrentId("");
@@ -72,14 +72,13 @@ const Links = () => {
                   </i>
                   <i
                     className="material-icons"
-                    onClick={() => setCurrentId(link.id)}
-                  >
+                    onClick={() => setCurrentId(link.id)}>
                     create
                   </i>
                 </div>
               </div>
               <p>{link.description}</p>
-              <a>${link.price} dlrs</a>
+              <p>${link.price} dlrs</p>
             </div>
           </div>
         ))}

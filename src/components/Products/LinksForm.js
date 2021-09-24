@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { db } from "./db/firebase";
+import FORM from './LinksStyle';
 
 const LinksForm = (props) => {
   const initialStateValues = {
@@ -37,7 +38,7 @@ const LinksForm = (props) => {
   }, [props.currentId]);
 
   return (
-    <form onSubmit={handleSubmit} className="card card-body border-primary">
+    <FORM onSubmit={handleSubmit} className="card card-body border-primary">
       <div className="form-group input-group">
         <div className="input-group-text bg-light">
           <i className="material-icons">monetization_on</i>
@@ -45,7 +46,7 @@ const LinksForm = (props) => {
         <input
           type="text"
           className="form-control"
-          placeholder="Precio"
+          placeholder="Price"
           value={values.price}
           name="price"
           onChange={handleInputChange}
@@ -59,7 +60,7 @@ const LinksForm = (props) => {
           type="text"
           value={values.name}
           name="name"
-          placeholder="Nombre"
+          placeholder="Product Name"
           className="form-control"
           onChange={handleInputChange}
         />
@@ -78,7 +79,7 @@ const LinksForm = (props) => {
       <button className="btn btn-primary btn-block">
         {props.currentId === "" ? "Save" : "Update"}
       </button>
-    </form>
+    </FORM>
   );
 };
 

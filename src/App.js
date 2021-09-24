@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Layout from './components/Layout/Layout';
 import Signup from './components/Auth/Signup';
 import Login from './components/Auth/Login';
+import Orders from './components/Orders/Orders';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import ResetPassword from './components/Auth/ResetPassword';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -33,6 +34,9 @@ const App = () => {
           </Route>
           <Route path='/reset-password'>
             <ResetPassword />
+          </Route>
+          <Route path='/orders' component={Orders}>
+            <Orders />
           </Route>
           <Route>
             <NotFound />

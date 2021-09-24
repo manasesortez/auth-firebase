@@ -5,6 +5,7 @@ import { NavLink, Link } from 'react-router-dom';
 import Logo from '../../images/logo.svg';
 import { useAuth } from '../../hooks/useAuth';
 
+
 const Nav = () => {
   const auth = useAuth();
 
@@ -13,7 +14,7 @@ const Nav = () => {
       <Link to='/'>
         <img src={Logo} alt='Logo' />
       </Link>
-        {auth.user && <button>Carrito</button>}
+        {auth.user && <NavLink to='/orders'>Orders</NavLink>}
         {auth.user && <button onClick={() => auth.logout()}>Logout</button>}
         {!auth.user && (
         <React.Fragment>

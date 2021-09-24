@@ -36,7 +36,7 @@ const Text = styled.p`
         return '1.25rem';
     }
   }};
-  margin: ${(props) => (props.margin ? props.margin : '5px')};
+  margin: ${(props) => (props.margin ? props.margin : '15px')};
   text-align: ${(props) => (props.textAlign ? props.textAlign : 'left')};
 `
 styled.a`color: #000;`;
