@@ -4,9 +4,12 @@ import H1 from '../Typography/H1';
 import Text from '../Typography/Text';
 import { useAuth } from '../../hooks/useAuth';
 import Slide from "../Slide/slide";
-
-import Links from "../Products/Links";
-
+import Links from "../Products/firebase/Links";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import AddProduct from '../Products/add-product.component';
+import Product from '../Products/product.component';
+import ProductsList from '../Products/products-list.component';
 
 const Dashboard = () => {
   const auth = useAuth();
@@ -15,7 +18,8 @@ const Dashboard = () => {
         <Slide/>
         <H1>Dashboard</H1>
         <Text>Logged in as {auth.user.email}</Text>
-        <Links />
+        <Product/>
+        <ProductsList/>
     </DashboardContainer>
   );
 

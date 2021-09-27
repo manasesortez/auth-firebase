@@ -4,16 +4,19 @@ import H1 from '../Typography/H1';
 import Text from '../Typography/Text';
 import { useAuth } from '../../hooks/useAuth';
 import Slide from "../Slide/slide";
+import FoodOrder from "./FoodOrder/FoodOrder";
+import Nav from "../Nav/Nav";
 
 
-
-const Dashboard = () => {
-    const auth = useAuth();
+const Orders = () => {
+    const authLog = useAuth();
     return (
         <DashboardContainer>
+            <Nav/>
             <Slide/>
-            <H1>Dashboard</H1>
-            <Text>Hi, {auth.user.email} Welcome to Orders</Text>
+            <H1>Order Dashboard</H1>
+            <Text>Hi, {authLog.user.email} Welcome to Orders</Text>
+            <FoodOrder/>
         </DashboardContainer>
     );
 
@@ -39,4 +42,4 @@ const DashboardContainer = styled.div`{
 }
 `;
 
-export default Dashboard;
+export default Orders;

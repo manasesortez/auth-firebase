@@ -11,17 +11,22 @@ const Nav = () => {
 
   return (
     <NavContainer >
+
       <Link to='/'>
         <img src={Logo} alt='Logo' />
       </Link>
         {auth.user && <NavLink to='/orders'>Orders</NavLink>}
-        {auth.user && <button onClick={() => auth.logout()}>Logout</button>}
+        {auth.user && <NavLink to='/add'>Add Product</NavLink>}
+        {auth.user && <NavLink to='/'>View Products</NavLink>}
+        {auth.user && <button type="email" onClick={() => auth.logout()}>Logout</button>}
         {!auth.user && (
         <React.Fragment>
           <NavLink to='/signup'>Sign Up</NavLink>
           <NavLink to='/login'>Login</NavLink>
         </React.Fragment>
       )}
+
+
     </NavContainer>
   );
 };

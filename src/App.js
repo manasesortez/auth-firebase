@@ -14,6 +14,9 @@ import ResetPassword from './components/Auth/ResetPassword';
 import Dashboard from './components/Dashboard/Dashboard';
 import PrivateRoute from './components/Route/PrivateRoute';
 import NotFound from './components/NotFound/NotFound';
+import AddTutorial from './components/Products/add-product.component';
+import Tutorial from './components/Products/product.component';
+import TutorialsList from './components/Products/products-list.component';
 
 const App = () => {
   return (
@@ -44,6 +47,7 @@ const App = () => {
         </Switch>
       </Layout>
     </Router>
+
   );
 };
 
